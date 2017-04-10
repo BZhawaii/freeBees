@@ -20,8 +20,16 @@ export class LandingPage {
   }  //closes ngOnInit
 
   getDefaults() {
-    this.category = 'sports';
-    this.limit = 10;
+    if(localStorage.getItem('category') != null) {
+      this.category=localStorage.getItem('category');
+    } else {
+      this.category = 'sports';
+    }  //closes if/else
+    if(localStorage.getItem('limit') != null) {
+      this.limit=localStorage.getItem('limit');
+    } else {
+      this.limit = 10;
+    }  //closes if/else
   }  //closes getDefaults
 
   getPosts(category, limit) {
