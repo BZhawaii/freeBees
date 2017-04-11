@@ -20,6 +20,4 @@ export class FreebeeService {
       .map(res => res.json());
   }  //closes getPosts
 
-
-
 }  //closes export

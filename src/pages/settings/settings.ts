@@ -9,7 +9,6 @@ import { LandingPage } from '../landing/landing'
 })  //closes component
 export class SettingsPage {
   category: any;
-  limit: any;
   constructor(public navCtrl: NavController, private freebeeService: FreebeeService) {
     this.getDefaults();
   }  //closes constructor
@@ -20,16 +19,11 @@ export class SettingsPage {
     } else {
       this.category = 'food';
     }  //closes if/else
-    if(localStorage.getItem('limit') != null) {
-      this.limit=localStorage.getItem('limit');
-    } else {
-      this.limit = 10;
-    }  //closes if/else
+
   }  //closes getDefaults
 
   setDefaults() {
     localStorage.setItem('category', this.category);
-    localStorage.setItem('limit', this.limit);
     this.navCtrl.push(LandingPage);
   }
 

@@ -1,46 +1,47 @@
 <ion-header>
   <ion-navbar color="secondary">
     <ion-title>
-      {{item.title}}
+      {{item.freebee_name}}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="background">
   <ion-card>
-    <img  *ngIf="item.preview.images[0].source.url" src="{{item.preview.images[0].source.url}}"/>
+    <img src="{{item.imageURL}}"/>
   <ion-card-content>
     <ion-card-title>
-      {{item.title}}
+      {{item.name}}
+      <br>
+       {{item.address}}
       </ion-card-title>
       <ion-list>
 
         <ion-item>
-          <ion-icon name="person" item-left></ion-icon>
-          Author
+          About
           <ion-note item-right>
-            {{item.author}}
+            {{item.about}}
           </ion-note>
         </ion-item>
 
         <ion-item>
-          <ion-icon name="person" item-left></ion-icon>
-          Author
+          <ion-icon name="beer" item-left></ion-icon>
+            {{item.category}}
           <ion-note item-right>
-            {{item.author}}
+            {{item.type}}
           </ion-note>
         </ion-item>
 
         <ion-item>
-          <ion-icon name="person" item-left></ion-icon>
-          Author
+          <ion-icon name="alarm" item-left></ion-icon>
+          Expires
           <ion-note item-right>
-            {{item.author}}
+            {{item.stopTime}}
           </ion-note>
         </ion-item>
 
       </ion-list>
-      <a ion-button block target="_blank" href="#">Go to site</a>
+      <a ion-button block target="_blank" href="{{item.www}}">Go to site</a>
     </ion-card-content>
   </ion-card>
 </ion-content>

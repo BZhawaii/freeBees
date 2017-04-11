@@ -37,6 +37,7 @@ export class LandingPage {
   }  //closes getPosts
 
   viewItem(item) {
+    console.log("This is the view item in landing.ts",item);
     this.navCtrl.push(DetailsPage, {
       item: item
     })
