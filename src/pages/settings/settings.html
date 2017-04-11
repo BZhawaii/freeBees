@@ -14,8 +14,7 @@
         <ion-card-header text-center>
           Set your main page category.
         </ion-card-header>
-      </ion-card>
-      <ion-item color="primary">
+      <ion-item color="secondary">
         <ion-label fixed></ion-label>
         <ion-select [(ngModel)]="category" name="category">
           <ion-option value="all">Show All</ion-option>
@@ -26,6 +25,7 @@
           <ion-option value="admission">Admission</ion-option>
         </ion-select>
       </ion-item>
+    </ion-card>
       <button ion-button type="submit" block color="secondary">Save changes</button>
     </ion-list>
   </form>
