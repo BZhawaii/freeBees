@@ -10,8 +10,8 @@
 
   <ion-list>
     <ion-item>
-      <ion-label fixed>Category</ion-label>
-      <ion-select (ionChange)="changeCategory()" [(ngModel)]="category" name="category">
+      <ion-label fixed>Type of Freebee</ion-label>
+      <ion-select (ionChange)="changeCategory(category)" [(ngModel)]="category" name="category" item-right>
         <ion-option value="drinks">Drinks</ion-option>
         <ion-option value="food">Food</ion-option>
         <ion-option value="stuff">Stuff</ion-option>
@@ -21,15 +21,14 @@
   </ion-list>
 
   <ion-list>
-    <ion-item *ngFor="let item of items">
+    <ion-item *ngFor="let item of items" (click)="viewItem(item)">
       <ion-thumbnail *ngIf="item.imageURL" item-left>
         <img src="{{item.imageURL}}">
       </ion-thumbnail>
       <h2>{{item.name}}</h2>
-      <h6>{{item.id}}</h6>
+      <h6>{{item.category}}</h6>
       <h6>{{item.type}}</h6>
       <!-- <ion-icon food/beer/stuff/tickets></ion-icon> -->
-      <button ion-button clear color="secondary" item-right (click)="viewItem(item)">View</button>
     </ion-item>
   </ion-list>
 

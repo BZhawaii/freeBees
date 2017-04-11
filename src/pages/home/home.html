@@ -7,19 +7,28 @@
 <ion-content padding class="background">
 
   <ion-card color="secondary">
+    <ion-card-header text-center>
+      Welcome to FreeBees.
+    </ion-card-header>
     <ion-card-content>
+      Get the Buzz on what's free in your area.  You can easily find free items being offered in your area and even select the type of free items you are interested in.  Just a few clicks and you can find all the free food in your city.  Better yet, all the free drinks (beer, wine, liquor) that you can handle.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card color="secondary">
+    <ion-card-content text-center>
       Sign-Up
     </ion-card-content>
   </ion-card>
 
   <ion-card color="secondary">
-    <ion-card-content>
+    <ion-card-content text-center>
       Sign-In
     </ion-card-content>
   </ion-card>
 
-  <ion-card color="secondary">
-    <ion-card-content>
+  <ion-card color="secondary"  (click)="goToAbout()">
+    <ion-card-content text-center>
       About Freebees
     </ion-card-content>
   </ion-card>

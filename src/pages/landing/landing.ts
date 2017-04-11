@@ -30,10 +30,17 @@ export class LandingPage {
 
   getPosts(category) {
     this.freebeeService.getPosts(category).subscribe(response => {
-      console.log("Inside get posts", response.data[0]);
-      this.items = response.data;
-      console.log(this.items);
+      console.log("Inside get posts", category, response.data[0]);
+      if(category === "all") {
+        this.items = response.data
+      } else {
+        this.items = response.data.filter(
+          cat => category === cat.category.toLowerCase()
+        );
+      }
+      console.log("This is this.items in getPosts", this.items)
     })
+
   }  //closes getPosts
 
   viewItem(item) {
@@ -43,8 +50,13 @@ export class LandingPage {
     })
   }  //closes viewItem
 
-  changeCategory() {
-    this.getPosts(this.category);
+  changeCategory(category) {
+    this.freebeeService.getPosts(category).subscribe(response => {
+      console.log("Inside  changeCategory", category, response.data[0]);
+      this.items = response.data.filter(
+        cat => category === cat.category.toLowerCase()
+      );
+    })
   }  //closes changeCategory
 
 }  //closes export class
