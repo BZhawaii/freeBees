@@ -18,7 +18,7 @@ export class SettingsPage {
     if(localStorage.getItem('category') != null) {
       this.category=localStorage.getItem('category');
     } else {
-      this.category = 'sports';
+      this.category = 'food';
     }  //closes if/else
     if(localStorage.getItem('limit') != null) {
       this.limit=localStorage.getItem('limit');

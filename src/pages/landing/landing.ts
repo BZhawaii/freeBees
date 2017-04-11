@@ -16,25 +16,23 @@ export class LandingPage {
   }  //closes constructor
 
   ngOnInit() {
-    this.getPosts(this.category, this.limit);
+    console.log("On init", this.category);
+    this.getPosts(this.category);
   }  //closes ngOnInit
 
   getDefaults() {
     if(localStorage.getItem('category') != null) {
       this.category=localStorage.getItem('category');
     } else {
-      this.category = 'sports';
-    }  //closes if/else
-    if(localStorage.getItem('limit') != null) {
-      this.limit=localStorage.getItem('limit');
-    } else {
-      this.limit = 10;
+      this.category = 'drinks';
     }  //closes if/else
   }  //closes getDefaults
 
-  getPosts(category, limit) {
-    this.freebeeService.getPosts(category, limit).subscribe(response => {
-      this.items = response.data.children;
+  getPosts(category) {
+    this.freebeeService.getPosts(category).subscribe(response => {
+      console.log("Inside get posts", response.data[0]);
+      this.items = response.data;
+      console.log(this.items);
     })
   }  //closes getPosts
 
@@ -45,7 +43,7 @@ export class LandingPage {
   }  //closes viewItem
 
   changeCategory() {
-    this.getPosts(this.category, this.limit);
+    this.getPosts(this.category);
   }  //closes changeCategory
 
 }  //closes export class

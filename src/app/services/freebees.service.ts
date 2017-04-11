@@ -10,12 +10,13 @@ export class FreebeeService {
 
   constructor(http: Http) {
     this.http = http;
-    this.baseUrl = 'https://www.reddit.com/r';
+    this.baseUrl = 'https://freebees-backend.herokuapp.com';
 
   }  //closes constructor
 
-  getPosts(table, limit) {
-    return this.http.get(this.baseUrl + '/' +table + '/top.json?limit=' + limit)
+  getPosts(table) {
+    console.log("This is in get Posts", table);
+    return this.http.get(this.baseUrl + '/' +'freebees')
       .map(res => res.json());
   }  //closes getPosts
 
