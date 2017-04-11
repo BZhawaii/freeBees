@@ -9,25 +9,24 @@
 <ion-content padding class="background">
   <form (submit)="setDefaults()">
     <ion-list>
-      <ion-item>
-        <ion-label fixed>Category</ion-label>
+
+      <ion-card block color="secondary">
+        <ion-card-header text-center>
+          Set your main page category.
+        </ion-card-header>
+      </ion-card>
+      <ion-item color="primary">
+        <ion-label fixed></ion-label>
         <ion-select [(ngModel)]="category" name="category">
+          <ion-option value="all">Show All</ion-option>
           <ion-option value="drinks">Drinks</ion-option>
           <ion-option value="food">Food</ion-option>
           <ion-option value="stuff">Stuff</ion-option>
           <ion-option value="entertainment">Entertainment</ion-option>
+          <ion-option value="admission">Admission</ion-option>
         </ion-select>
       </ion-item>
-      <ion-item>
-        <ion-label fixed>Limit</ion-label>
-        <ion-select [(ngModel)]="limit" name="limit">
-          <ion-option value="5">5</ion-option>
-          <ion-option value="10">10</ion-option>
-          <ion-option value="15">15</ion-option>
-          <ion-option value="20">20</ion-option>
-        </ion-select>
-      </ion-item>
-      <button ion-button type="submit" block>Save changes</button>
+      <button ion-button type="submit" block color="secondary">Save changes</button>
     </ion-list>
   </form>
 </ion-content>

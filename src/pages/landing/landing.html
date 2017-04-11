@@ -10,12 +10,14 @@
 
   <ion-list>
     <ion-item>
-      <ion-label fixed>Type of Freebee</ion-label>
+      <ion-label fixed>Freebee</ion-label>
       <ion-select (ionChange)="changeCategory(category)" [(ngModel)]="category" name="category" item-right>
+        <ion-option value="all">Show All</ion-option>
         <ion-option value="drinks">Drinks</ion-option>
         <ion-option value="food">Food</ion-option>
         <ion-option value="stuff">Stuff</ion-option>
         <ion-option value="entertainment">Entertainment</ion-option>
+        <ion-option value="admission">Admission</ion-option>
       </ion-select>
     </ion-item>
   </ion-list>

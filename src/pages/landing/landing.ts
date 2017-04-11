@@ -24,7 +24,7 @@ export class LandingPage {
     if(localStorage.getItem('category') != null) {
       this.category=localStorage.getItem('category');
     } else {
-      this.category = 'drinks';
+      this.category = 'all';
     }  //closes if/else
   }  //closes getDefaults
 
@@ -53,9 +53,13 @@ export class LandingPage {
   changeCategory(category) {
     this.freebeeService.getPosts(category).subscribe(response => {
       console.log("Inside  changeCategory", category, response.data[0]);
-      this.items = response.data.filter(
-        cat => category === cat.category.toLowerCase()
-      );
+      if(category === "all") {
+        this.items = response.data
+      } else {
+        this.items = response.data.filter(
+          cat => category === cat.category.toLowerCase()
+        );
+      }
     })
   }  //closes changeCategory
 
