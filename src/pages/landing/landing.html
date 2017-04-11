@@ -22,7 +22,7 @@
     </ion-item>
   </ion-list>
 
-  <ion-list>
+  <ion-list class="container">
     <ion-item *ngFor="let item of items" (click)="viewItem(item)">
       <ion-thumbnail *ngIf="item.imageURL" item-left>
         <img src="{{item.imageURL}}">
