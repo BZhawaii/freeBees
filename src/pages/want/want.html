@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar color="secondary">
     <ion-title>
-      {{item.freebee_name}}
+      FreeBees
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -16,7 +16,7 @@
        {{item.address}}
       </ion-card-title>
       <ion-list>
-        
+
         <button ion-button block type="button" name="button" (click)="changeButton(myVar)">
             <div *ngIf="myVar == true">CLAIM MY FREEBEE</div>
             <div *ngIf="myVar == false">ENJOY YOUR FREEBEE!!!</div>
@@ -24,7 +24,7 @@
 
         <ion-item>
           <ion-icon name="beer" item-left></ion-icon>
-            {{item.category}}
+            {{item.freebee_name}}
           <ion-note item-right>
             {{item.type}}
           </ion-note>

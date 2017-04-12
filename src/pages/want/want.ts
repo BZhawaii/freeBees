@@ -17,4 +17,6 @@ export class WantPage {
     return this.myVar = false;
   }
 
+
+
 }
