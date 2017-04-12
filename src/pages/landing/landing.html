@@ -24,11 +24,13 @@
 
   <ion-list class="container">
     <ion-item *ngFor="let item of items" (click)="viewItem(item)">
+      <ion-note item-right>
+        <h6>{{item.name}}</h6>
+      </ion-note>
       <ion-thumbnail *ngIf="item.imageURL" item-left>
         <img src="{{item.imageURL}}">
       </ion-thumbnail>
-      <h2>{{item.name}}</h2>
-      <h6>{{item.category}}</h6>
+      <h2>{{item.freebee_name}}</h2>
       <h6>{{item.type}}</h6>
       <!-- <ion-icon food/beer/stuff/tickets></ion-icon> -->
     </ion-item>

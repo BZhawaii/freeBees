@@ -16,13 +16,11 @@
        {{item.address}}
       </ion-card-title>
       <ion-list>
-
-        <ion-item>
-          About
-          <ion-note item-right>
-            {{item.about}}
-          </ion-note>
-        </ion-item>
+        
+        <button ion-button block type="button" name="button" (click)="changeButton(myVar)">
+            <div *ngIf="myVar == true">CLAIM MY FREEBEE</div>
+            <div *ngIf="myVar == false">ENJOY YOUR FREEBEE!!!</div>
+        </button>
 
         <ion-item>
           <ion-icon name="beer" item-left></ion-icon>
@@ -32,17 +30,9 @@
           </ion-note>
         </ion-item>
 
-        <ion-item>
-          <ion-icon name="alarm" item-left></ion-icon>
-          Expires
-          <ion-note item-right>
-            {{item.stopTime}}
-          </ion-note>
-        </ion-item>
-        <a href="{{item.www}}">Go to {{item.name}}</a>
+
 
       </ion-list>
-      <button ion-button block (click)="wantFreeBee(item)">I want this FreeBee</button>
     </ion-card-content>
   </ion-card>
 </ion-content>
